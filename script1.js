@@ -257,6 +257,11 @@ for (let i = 0; i < mereProducts.length; i++) {
   const imageElement = document.createElement("img");
   const ratingElement = document.createElement("p");
 
+  const btnElement = document.createElement("button");
+  btnElement.className="button"
+
+
+
   idElement.textContent = mereProducts[i].id;
   titleElement.textContent = mereProducts[i].title;
   priceElement.textContent = mereProducts[i].price;
@@ -271,6 +276,18 @@ for (let i = 0; i < mereProducts.length; i++) {
   const { rate, count } = mereProducts[i].rating;
   ratingElement.textContent = `Rating:${rate}  reviews:${count}`;
 
+  btnElement.textContent ="Add TO Cart";
+
+  btnElement.addEventListener("click", () => {
+    
+  
+    console.log(mereProducts[i].title,mereProducts[i].price);
+  });
+  // btnElement.onclick = function () {
+     // alert("button clicked");
+    // };
+  // btnElement.onclick() = showDetails(titleElement.textContent,priceElement.textContent);
+
   productItemContainer.appendChild(idElement);
   productItemContainer.appendChild(imageElement);
   productItemContainer.appendChild(titleElement);
@@ -279,6 +296,7 @@ for (let i = 0; i < mereProducts.length; i++) {
   productItemContainer.appendChild(descriptionElement);
  
   productItemContainer.appendChild(ratingElement);
+  productItemContainer.appendChild(btnElement);
 
   productContainer.appendChild(productItemContainer);
 }
